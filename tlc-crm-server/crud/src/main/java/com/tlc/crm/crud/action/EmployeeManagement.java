@@ -24,7 +24,6 @@ import java.util.Collection;
  */
 @WebAction(path= "/employees/mgmt")
 public class EmployeeManagement extends CrmConfigAction<Employee> {
-
     /**
      * Gets all data and return as json object
      *
