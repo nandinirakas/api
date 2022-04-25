@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+
+    <module name="crud_module">
+
+        <table name="Employee">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="NAME" data-type="CHAR" nullable="false" />
+                <column name="PHONE_NUMBER" data-type="CHAR" nullable="false" />
+                <column name="SALARY" data-type="BIGINT" nullable="false" />
+            </columns>
+            <primary-key name="Employee_PK" column="ID" sequence-generator="Employee.ID" />
+        </table>
+
+
+    </module>
+
+</metadata>
