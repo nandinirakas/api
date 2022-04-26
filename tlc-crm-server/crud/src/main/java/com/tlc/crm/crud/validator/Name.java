@@ -17,6 +17,7 @@ import java.lang.annotation.Documented;
 @Constraint(validatedBy = NameValidator.class)
 @Documented
 public @interface Name {
+    
     String message() default "must be a valid name";
 
     Class<?>[] groups() default {};

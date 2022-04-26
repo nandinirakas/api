@@ -22,6 +22,7 @@ import java.util.List;
  * @author NandiniRakAS
  */
 public class EmployeeManager implements ConfigManager<Employee> {
+
     private static final Table TABLE = Table.get("Employee");
     private static final OrgDataStore ORG_DATA_STORE = getOrgDataStore();
 
@@ -83,6 +84,7 @@ public class EmployeeManager implements ConfigManager<Employee> {
             ORG_DATA_STORE.commitChanges(dataContainer);
         }
     }
+
     /**
      * Updates employee data into database
      *
