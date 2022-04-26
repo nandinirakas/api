@@ -64,7 +64,7 @@ public class EmployeeManagement extends CrmConfigAction<Employee> {
         final Employee employee = new Employee(id, name, phoneNumber, salary);
         final String type = jsonObject.getString("type");
 
-        if (type.equals("create") || type.equals("update")) {
+        if ("create".equals(type) || "update".equals(type)) {
             EmployeeValidation.validate(employee, getGroups(type));
         }
         return employee;
@@ -77,7 +77,7 @@ public class EmployeeManagement extends CrmConfigAction<Employee> {
      */
     private Class getGroups(final String type) {
 
-        if (type.equals("create")) {
+        if ("create".equals(type)) {
             return Create.class;
         } else {
             return Update.class;
@@ -102,7 +102,7 @@ public class EmployeeManagement extends CrmConfigAction<Employee> {
             final Employee employee = new Employee(id, name, phoneNumber, salary);
             final String type = employeeData.getString("type");
 
-            if (type.equals("create")) {
+            if ("create".equals(type)) {
 
                 try {
                     EmployeeValidation.validate(employee, getGroups(type));

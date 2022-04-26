@@ -58,9 +58,7 @@ public class EmployeeManager implements ConfigManager<Employee> {
         final Row row = new Row(TABLE);
         final DataContainer dataContainer = DataContainer.create();
 
-        row.set("NAME", employee.getName());
-        row.set("PHONE_NUMBER", employee.getPhoneNumber());
-        row.set("SALARY", employee.getSalary());
+        setColumns(row, employee);
         dataContainer.addNewRow(row);
         ORG_DATA_STORE.commitChanges(dataContainer);
     }
@@ -76,10 +74,7 @@ public class EmployeeManager implements ConfigManager<Employee> {
         for (final Employee employee : employeeData) {
             final Row row = new Row(TABLE);
 
-            row.set("NAME", employee.getName());
-            row.set("PHONE_NUMBER", employee.getPhoneNumber());
-            row.set("SALARY", employee.getSalary());
-
+            setColumns(row, employee);
             dataContainer.addNewRow(row);
             ORG_DATA_STORE.commitChanges(dataContainer);
         }
@@ -178,7 +173,7 @@ public class EmployeeManager implements ConfigManager<Employee> {
 
         employee.setId(row.get("ID"));
         employee.setName(row.get("NAME"));
-        employee.setName(row.get("PHONE_NUMBER"));
+        employee.setPhoneNumber(row.get("PHONE_NUMBER"));
         employee.setSalary(row.get("SALARY"));
 
         return employee;
